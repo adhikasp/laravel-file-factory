@@ -16,7 +16,7 @@ mix.webpackConfig({
   target: 'node',
   output: { // make our template globally importable
     library: 'compiledTemplates',
-    libraryTarget: 'umd',    
+    libraryTarget: 'umd',
     umdNamedDefine: true
   },
   module: {
@@ -25,12 +25,12 @@ mix.webpackConfig({
         test: /\.stub$/i,
         use: 'raw-loader',
       },
-      { 
-        test: require.resolve("./src/templates/index.js"), 
+      {
+        test: require.resolve("./src/templates/index.js"),
         use: [{
             loader: 'expose-loader',
             options: 'template'
-        }] 
+        }]
       },
     ],
   },
